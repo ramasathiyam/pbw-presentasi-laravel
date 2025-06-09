@@ -14,7 +14,7 @@ class Tambah extends Model
 
     protected $fillable = [
         'NamaBarang',
-        'Jenis Barang',
+        'JenisBarang',
         'Merk',
         'Stok',
         'Harga',

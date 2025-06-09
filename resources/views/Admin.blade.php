@@ -24,16 +24,28 @@
             </tr>  
         </thead>
         <tbody>
-            {{-- @php $no = 1; @endphp
+            @php $no = 1; @endphp
             @foreach($data as $post)
                 <tr>
                     <td>{{ $no++ }}</td>
-                    <td><img src="{{ asset('storage/' . $post->Poster) }}" width="60" /></td>
-                    <td>{{ $post->JudulKegiatan }}</td>
-                    <td>{{ $post->Kategori }}</td>
-                    <td>{{ ucfirst($post->Status) }}</td>
+                    {{-- <td><img src="{{ asset('storage/' . $post->Poster) }}" width="60" /></td> --}}
+                    <td>{{ $post->NamaBarang }}</td>
+                    <td>{{ $post->JenisBarang }}</td>
+                    <td>{{ $post->Merk }}</td>
+                    <td>{{ $post->Stok }}</td>
+                    <td>{{ $post->Harga }}</td>
+                    <td>
+                        <a class="btn btn-warning" href="{{ route('Edit', $post->id) }}">Edit</a>
+                        {{-- <a class="btn btn-danger" href="{{ route('Tambah') }}">Hapus</a> --}}
+                        <form action="{{ route('Hapus', $post->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Yakin ingin menghapus?')">Hapus</button>
+                        </form>
+
+                    </td>
                 </tr>
-            @endforeach --}}
+            @endforeach
         </tbody>
     </table>
 </body>

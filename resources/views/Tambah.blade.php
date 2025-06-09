@@ -16,25 +16,28 @@
                 @csrf
                 <div class="mb-3">
                     <label for="nama" class="form-label">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="NamaBarang" placeholder="Masukkan nama barang">
+                    <input type="text" class="form-control" id="nama" name="NamaBarang" placeholder="Masukkan nama barang" value="{{ old('NamaBarang') }}">
+                    @error('NamaBarang') <small class="text-danger">{{ $message }}</small>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="jenis" class="form-label">Jenis</label>
-                    <input type="text" class="form-control" id="jenis" name="JenisBarang" placeholder="Masukkan jenis barang">
+                    <input type="text" class="form-control" id="jenis" name="JenisBarang" placeholder="Masukkan jenis barang" value="{{ old('JenisBarang') }}">
+                    @error('JenisBarang') <small class="text-danger">{{ $message }}</small>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="merk" class="form-label">Merk</label>
-                    <input type="text" class="form-control" id="merk" name="Merk" placeholder="Masukkan merk barang">
+                    <input type="text" class="form-control" id="merk" name="Merk" placeholder="Masukkan merk barang" value="{{ old('Merk') }}">
+                    @error('Merk') <small class="text-danger">{{ $message }}</small>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="stok" class="form-label">Stok</label>
-                    <input type="number" class="form-control" id="stok" name="Stok" placeholder="Masukkan jumlah stok">
-                    <div class="invalid-feedback"></div>
+                    <input type="number" class="form-control" id="stok" name="Stok" placeholder="Masukkan jumlah stok" value="{{ old('Stok') }}">
+                    @error('Stok') <small class="text-danger">{{ $message }}</small>@enderror
                 </div>
                 <div class="mb-3">
                     <label for="harga" class="form-label">Harga</label>
-                    <input type="number" class="form-control" id="harga" name="Harga" placeholder="Masukkan harga">
-                    <div class="invalid-feedback"></div>
+                    <input type="number" class="form-control" id="harga" name="Harga" placeholder="Masukkan harga" value="{{ old('Harga') }}">
+                    @error('Harga') <small class="text-danger">{{ $message }}</small>@enderror
                 </div>
                 <button type="submit" name="simpan" class="btn btn-success">Simpan</button>
                 <a class="btn btn-secondary" href="{{ route('Admin') }}">Kembali</a>
